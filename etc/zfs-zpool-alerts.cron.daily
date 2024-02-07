@@ -1,0 +1,8 @@
+#!/bin/sh
+
+PATH="/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+
+# Only call zfs-zpool-alerts if available
+which zfs-zpool-alerts > /dev/null || exit 0
+
+exec zfs-zpool-alerts -a //
